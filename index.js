@@ -58,13 +58,17 @@ let lengthValueEl = document.getElementById("length-value");
 let randomNum = 0;
 let generateButton = document.getElementById("generate");
 
-function randomPass() {
-  for (let i = 0; i < lengthValueEl; i++) {
-    passElOne.textContent += characters[i];
-  }
-}
+// function randomPass() {
+//   for (let i = 0; i < lengthValueEl; i++) {
+//     passElOne.textContent += characters[i];
+//   }
+// }
 
 generateButton.addEventListener("click", function () {
+  passElOne.textContent = "";
+  passElTwo.textContent = "";
+  passElThree.textContent = "";
+  passElFour.textContent = "";
   let randomIndexOne = 0;
   let randomIndexTwo = 0;
   let randomIndexThree = 0;
@@ -81,3 +85,4 @@ generateButton.addEventListener("click", function () {
     passElFour.textContent += characters[randomIndexFour];
   }
 });
+
