@@ -58,31 +58,33 @@ let lengthValueEl = document.getElementById("length-value");
 let randomNum = 0;
 let generateButton = document.getElementById("generate");
 
-// function randomPass() {
-//   for (let i = 0; i < lengthValueEl; i++) {
-//     passElOne.textContent += characters[i];
-//   }
-// }
+function randomNumber() {
+  let randomChar = Math.floor(Math.random() * characters.length);
+  return randomChar;
+}
 
-generateButton.addEventListener("click", function () {
+function setInitialInputValue() {
   passElOne.textContent = "";
   passElTwo.textContent = "";
   passElThree.textContent = "";
   passElFour.textContent = "";
-  let randomIndexOne = 0;
-  let randomIndexTwo = 0;
-  let randomIndexThree = 0;
-  let randomIndexFour = 0;
+}
+
+generateButton.addEventListener("mousedown", function () {
+  setInitialInputValue();
+  let randomIndexOne;
+  let randomIndexTwo;
+  let randomIndexThree;
+  let randomIndexFour;
 
   for (let i = 0; i < lengthValueEl.value; i++) {
-    randomIndexOne = Math.floor(Math.random() * characters.length);
-    randomIndexTwo = Math.floor(Math.random() * characters.length);
-    randomIndexThree = Math.floor(Math.random() * characters.length);
-    randomIndexFour = Math.floor(Math.random() * characters.length);
+    randomIndexOne = randomNumber();
+    randomIndexTwo = randomNumber();
+    randomIndexThree = randomNumber();
+    randomIndexFour = randomNumber();
     passElOne.textContent += characters[randomIndexOne];
     passElTwo.textContent += characters[randomIndexTwo];
     passElThree.textContent += characters[randomIndexThree];
     passElFour.textContent += characters[randomIndexFour];
   }
 });
-
